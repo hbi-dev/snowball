@@ -1,4 +1,4 @@
-export const data = [
+export const Data = [
   {
     trace_id: "default",
     team: "xmerch-aggregator",
