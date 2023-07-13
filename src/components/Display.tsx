@@ -1,5 +1,5 @@
 import React from "react";
-import Event from "./event";
+import Event from "./Event";
 
 const Display = ({ data }) => {
   return (
@@ -7,8 +7,8 @@ const Display = ({ data }) => {
       <div className='displayResult'>
         {data &&
           data?.length > 0 &&
-          data?.map((item) => {
-            return <Event item={item} />;
+          data?.map((item:any , index:any) => {
+            return <Event item={item} key={index}/>;
           })}
       </div>
     </>
