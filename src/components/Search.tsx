@@ -7,9 +7,9 @@ const Search = () => {
   const [skuId, setSkuId] = useState('');
   const [skuLocale, setSkuLocale] = useState('')
   //const [skus, setSkus] = useState<AxiosResponse | null | void>(null);
-  const [skus, setSkus] = useState([]);
+  const [skuEvents, setSkuEvent] = useState<skuEvent[]>([]);
 
-  interface event {
+  interface skuEvent {
     trace_id: string;
     team: string;
     application: string;
@@ -28,7 +28,7 @@ const Search = () => {
     try {
       const response = await fetch(apiUrl, {})
       const data = await response.json();
-      return setSkus(data)
+      return setSkuEvent(data)
     } catch (error) {
       console.error(error);
     }
@@ -60,8 +60,8 @@ const Search = () => {
           Search
         </button>
       </div>
-      <h1>{skus && skus.length > 0 ? '' : 'No record found'}</h1>
-      <Display data={skus} />
+      <h1>{skuEvents && skuEvents.length > 0 ? '' : 'No record found'}</h1>
+      <Display data={skuEvents} />
     </>
   );
 };
