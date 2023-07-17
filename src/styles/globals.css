@@ -68,3 +68,7 @@ button{
 .error {
   background-color: red
 }
+
+.displayResult{
+  display: flex;
+}

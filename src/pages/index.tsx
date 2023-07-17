@@ -26,7 +26,7 @@ export default function Home() {
       </Head>
       <main>
         <Search />
-        <Display />
+        <Display data={undefined} />
       </main>
     </>
   );

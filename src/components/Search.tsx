@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { Data } from '../asset/Data';
 import Display from './Display';
-import axios, { AxiosResponse } from 'axios';
-import { UUID } from 'crypto';
+import fetch from 'node-fetch';
+
 
 const Search = () => {
   const [skuId, setSkuId] = useState('');
-  const [skuLocale, setSkuLocale] = useState('fr-FR')
-  const [skus, setSkus] = useState<AxiosResponse | null | void>(null);
+  const [skuLocale, setSkuLocale] = useState('')
+  //const [skus, setSkus] = useState<AxiosResponse | null | void>(null);
+  const [skus, setSkus] = useState([]);
 
   interface event {
     trace_id: string;
@@ -18,6 +18,7 @@ const Search = () => {
     timestamp: Date;
   }
 
+
   //3a816c7c-5526-4a40-af51-fb417eb3b6fc
   const apiUrl = 'https://snowball-api.ig1.xmerch-back-stg.xmerch-backend-stg-jeni.decathlon.io/api/v1/skus/' + skuLocale + '/' + skuId + '/events'
   //               https://snowball-api.ig1.xmerch-back-stg.xmerch-backend-stg-jeni.decathlon.io/api/v1/skus/fr-BE/3a816c7c-5526-4a40-af51-fb417eb3b6fc/events
@@ -25,8 +26,9 @@ const Search = () => {
 
   const handleOnClick = async () => {
     try {
-      const response = await axios.get(apiUrl);
-      return setSkus(response)
+      const response = await fetch(apiUrl, {})
+      const data = await response.json();
+      return setSkus(data)
     } catch (error) {
       console.error(error);
     }
@@ -58,6 +60,7 @@ const Search = () => {
           Search
         </button>
       </div>
+      <h1>{skus && skus.length > 0 ? '' : 'No record found'}</h1>
       <Display data={skus} />
     </>
   );
