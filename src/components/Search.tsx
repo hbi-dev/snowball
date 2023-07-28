@@ -40,7 +40,11 @@ const Search = () => {
   return (
     <>
       <div className='search_title'>
-        <h1>Snow Ball</h1>
+        <h1>Snow Ball
+          <a href="https://wiki.decathlon.net/display/XCOM/xmerch-snowball+-+Connect+my+application+to+Snowball" target='_blank'>
+            <img className="info" src="/information.png" alt="more infos" />
+          </a>
+        </h1>
       </div>
       <div className='input__wrapper'>
         <input

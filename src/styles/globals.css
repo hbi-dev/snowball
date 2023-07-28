@@ -19,6 +19,11 @@ main{
   width: 100vw;  
 }
 
+.info {
+  width: .7em;
+  height: .7em;
+  margin-left : 10px;
+}
 .search_title{
 width: 90%;
 padding: 1.5rem;
