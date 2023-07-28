@@ -12,7 +12,7 @@ const Event = ({ item }) => {
         <br />
         <p>{item?.timestamp}</p>
       </div>
-      <div className={item?.timestamp ? "sucess" : "error"}></div>
+      <div className={item?.timestamp ? "success" : "error"}></div>
     </div>
   );
 };
