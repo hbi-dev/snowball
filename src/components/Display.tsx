@@ -7,8 +7,8 @@ const Display = ({ data }) => {
       <div className='displayResult'>
         {data &&
           data?.length > 0 &&
-          data?.map((item: any, index: any) => {
-            return <Event item={item} key={index} />;
+          data?.map((skuEvent: any, index: any) => {
+            return <Event skuEvent={skuEvent} key={index} />;
           })}
       </div>
     </>

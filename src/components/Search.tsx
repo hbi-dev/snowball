@@ -7,9 +7,9 @@ const Search = () => {
   const [skuId, setSkuId] = useState('');
   const [skuLocale, setSkuLocale] = useState('')
   //const [skus, setSkus] = useState<AxiosResponse | null | void>(null);
-  const [skuEvents, setSkuEvent] = useState<skuEvent[]>([]);
+  const [skuEvents, setSkuEvent] = useState<SKUEVENT[]>([]);
 
-  interface skuEvent {
+  interface SKUEVENT {
     trace_id: string;
     team: string;
     application: string;
@@ -21,7 +21,8 @@ const Search = () => {
 
   //3a816c7c-5526-4a40-af51-fb417eb3b6fc
   const apiUrl = 'https://snowball-api.ig1.xmerch-back-stg.xmerch-backend-stg-jeni.decathlon.io/api/v1/skus/' + skuLocale + '/' + skuId + '/events'
-  //               https://snowball-api.ig1.xmerch-back-stg.xmerch-backend-stg-jeni.decathlon.io/api/v1/skus/fr-BE/3a816c7c-5526-4a40-af51-fb417eb3b6fc/events
+  //https://snowball-api.ig1.xmerch-back-stg.xmerch-backend-stg-jeni.decathlon.io/api/v1/skus/fr-BE/3a816c7c-5526-4a40-af51-fb417eb3b6fc/events
+  //https://snowball-api.ig1.xmerch-back-stg.xmerch-backend-stg-jeni.decathlon.io/api/v1/skus/en-GB/9e0a472d-5651-4484-9369-45a4b2038561/events
 
 
   const handleOnClick = async () => {
@@ -33,12 +34,13 @@ const Search = () => {
       console.error(error);
     }
     setSkuId('');
+    setSkuLocale('');
   };
 
   return (
     <>
       <div className='search_title'>
-        <h1>Sku finder</h1>
+        <h1>Snow Ball</h1>
       </div>
       <div className='input__wrapper'>
         <input

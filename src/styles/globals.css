@@ -65,17 +65,17 @@ button{
   flex-direction: column;
 }
 
-.status{
+#status{
   height: 100%;
   width: 10%;
 }
 
 .success {
-  background-color: green;
+  background-color: #89D99D;
 }
 
 .error {
-  background-color: red
+  background-color: #E3371E;
 }
 
 .displayResult{
