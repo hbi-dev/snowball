@@ -42,12 +42,14 @@ const Search = () => {
       </div>
       <div className='input__wrapper'>
         <input
+          className='sku_input'
           type='text'
           placeholder='sku id'
           value={skuId}
           onChange={(e) => setSkuId(e.target.value)}
         />
         <input
+          className='local_input'
           type='text'
           placeholder='Locale'
           value={skuLocale}

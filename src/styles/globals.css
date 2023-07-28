@@ -38,9 +38,18 @@ input{
   padding: 10px;
 }
 
+.sku_input {
+  margin-right: 1rem;
+}
+
+.local_input {
+  width: 10%;
+}
+
 button{
   padding: 10px;
   font-size: .9rem;
+  margin-left: 1rem;
 }
 
 .card{
